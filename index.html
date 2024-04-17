@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript"  src="java.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+          <form id="form1" >
+            <h1>Register</h1>
+
+              <div class="input">
+                 <label for="User"> User: </label><br>
+                 <input type="text" id="User" placeholder="Enter User Name" ><br>
+                </div>
+                
+                <div class="input">
+                    <label for="password">Password:</label><br>
+                     <input type="password" id="password" placeholder="*******"><br>
+
+                 </div>
+                    <button id="register" type="button" onclick="displayinfo()">Register</button>
+                      
+                 <h4 class="info"></h4>
+                 
+                 <button id="clear" type="button" onclick="deleteAllUsers()">Clear All Data</button><br>
+        </form>
+
+        <div class="vertical-line"></div>
+
+        <form id="form2" >
+            <h1>Login</h1>
+
+              <div class="input">
+                 <label for="User"> User: </label><br>
+                 <input type="text" id="User" placeholder="Enter User Name" ><br>
+                </div>
+                     
+            
+                
+                <div class="input">
+                    <label for="password">Password:</label><br>
+                     <input type="password" id="password" placeholder="*******"><br>
+                      
+                 </div>
+                 <button id="login" type="button" onclick="">Login</button><br>
+
+                 <button id="clear" type="submit">Clear Alll Data</button>
+
+                    <button id="logagain" type="button" onclick="displayinfo()">Login Again</button>
+                      
+                 <h4 class="info"></h4>
+                
+                  
+
+        </form>
+       
+    </div>
+
+    
+</body>
+</html>

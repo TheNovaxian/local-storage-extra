@@ -1,0 +1,204 @@
+body{
+   background-color: rgb(255, 255, 255);
+   justify-content: center;
+   align-items: center;
+   font: 100% /normal sans-serif;
+   
+}
+
+/* to center the form1
+ */
+.container{
+    align-self: center;
+    width: 800px;
+    background-color:#2BAF90 ;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+height: 500px;
+margin: 0 auto;
+border-radius: 60px;
+}
+
+.vertical-line {
+    border-left: 1px solid #A1D4B1;
+    height: 400px; /* Adjust height as needed */
+    margin: 0 10px; /* Adjust margin as needed */
+    background-color: transparent;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.721);
+  }
+
+#form1
+{
+   width: 300px;
+   /* background-image: url(formback.jpg); */
+   background-color: #A1D4B1;
+   padding: 10px;
+   border-radius: 10px;
+   color: white;
+   font-family:Arial, Helvetica, sans-serif ;
+   font-style:bold;
+  
+}
+
+#form1
+ .info{
+    color: rgb(111, 255, 0);
+}
+
+#form1
+ input[type="text"],
+#form1
+ input[type="password"]{
+   display: block;
+   width: calc(100% - 10px);
+   height: 25px;
+   margin-bottom: 5px;
+   margin-top: 10px;
+
+}
+
+
+
+#form1
+ button#clear{
+    width:35% ;
+    height: 25px;
+    background-color:#8C0027;
+    color: white;
+   border-radius: 5px;
+   border: 1px solid#8C0027;
+   margin-top: 1px;
+   cursor: pointer;
+   ;
+ }
+ #form1
+  button#register{
+    width:35% ;
+    height: 25px;
+    background-color: #F1A512;
+    color: white;
+   border-radius: 5px;
+   border: 1px solid #F1A512;
+   margin-top: 1px;
+   cursor: pointer;
+   ;
+ }
+
+
+ .hide-button{
+    visibility: hidden;
+ }
+
+#form1
+ h1{
+   text-align: center;
+}
+
+#form1
+ label{
+display: inline-block;
+margin-top: 2px;
+}
+
+
+
+.buttoncontainer{
+   display: flex;
+   flex-direction: row;
+}
+
+#form2
+{
+   width: 300px;
+   /* background-image: url(formback.jpg); */
+   background-color: #A1D4B1;
+   padding: 10px;
+   border-radius: 10px;
+   color: white;
+   font-family:Arial, Helvetica, sans-serif ;
+   font-style:bold;
+  
+}
+
+#form2
+ .info{
+    color: rgb(111, 255, 0);
+}
+
+#form2
+ input[type="text"],
+#form2
+ input[type="password"]{
+   display: block;
+   width: calc(100% - 10px);
+   height: 25px;
+   margin-bottom: 5px;
+   margin-top: 10px;
+
+}
+
+#form2
+ button#clear{
+    width:35% ;
+    height: 25px;
+    background-color:#8C0027;
+    color: white;
+   border-radius: 5px;
+   border: 1px solid#8C0027;
+   margin-top: 1px;
+   cursor: pointer;
+   ;
+ }
+ #form2
+  button#logagain{
+    width:35% ;
+    height: 25px;
+    background-color: #F1A512;
+    color: white;
+   border-radius: 5px;
+   border: 1px solid #F1A512;
+   margin-top: 1px;
+   cursor: pointer;
+   ;
+ }
+
+
+
+ #form2
+  button#login{
+   width:25% ;
+   height: 25px;
+   background-color: #F1A512;
+   color: white;
+   border-radius: 5px;
+   border: 1px solid #F1A512;
+   margin-top: 1px;
+   margin-bottom: 10px;
+   cursor: pointer;
+   padding-bottom: 10px;
+ }
+
+
+ .hide-button{
+    visibility: hidden;
+ }
+
+#form2
+ h1{
+   text-align: center;
+}
+
+#form2
+ label{
+display: inline-block;
+margin-top: 2px;
+}
+
+
+
+.buttoncontainer{
+   display: flex;
+   flex-direction: row;
+}
