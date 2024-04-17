@@ -21,7 +21,7 @@ margin: 0 auto;
 border-radius: 60px;
 }
 
-.vertical-line {
+#vertical-line {
     border-left: 1px solid #A1D4B1;
     height: 400px; /* Adjust height as needed */
     margin: 0 10px; /* Adjust margin as needed */
@@ -124,7 +124,7 @@ margin-top: 2px;
 
 #form2
  .info{
-    color: rgb(111, 255, 0);
+    color: red;
 }
 
 #form2

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Storage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript"  src="java.js"></script>
+    <script type="text/javascript"  src="script.js"></script>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -16,46 +16,45 @@
             <h1>Register</h1>
 
               <div class="input">
-                 <label for="User"> User: </label><br>
-                 <input type="text" id="User" placeholder="Enter User Name" ><br>
+                 <label for="UserR"> User: </label><br>
+                 <input type="text" id="UserR" placeholder="Enter User Name" ><br>
                 </div>
                 
                 <div class="input">
-                    <label for="password">Password:</label><br>
-                     <input type="password" id="password" placeholder="*******"><br>
+                    <label for="passwordR">Password:</label><br>
+                     <input type="password" id="passwordR" placeholder="*******"><br>
 
                  </div>
-                    <button id="register" type="button" onclick="displayinfo()">Register</button>
+                    <button id="register" type="submit" onclick="reveal()">Register</button>
                       
                  <h4 class="info"></h4>
                  
                  <button id="clear" type="button" onclick="deleteAllUsers()">Clear All Data</button><br>
         </form>
 
-        <div class="vertical-line"></div>
+        <div id="vertical-line"></div>
 
         <form id="form2" >
             <h1>Login</h1>
 
               <div class="input">
-                 <label for="User"> User: </label><br>
-                 <input type="text" id="User" placeholder="Enter User Name" ><br>
+                 <label for="User2"> User: </label><br>
+                 <input type="text" id="User2" placeholder="Enter User Name" ><br>
                 </div>
                      
             
                 
                 <div class="input">
-                    <label for="password">Password:</label><br>
-                     <input type="password" id="password" placeholder="*******"><br>
+                    <label for="password2">Password:</label><br>
+                     <input type="password" id="password2" placeholder="*******"><br>
                       
                  </div>
-                 <button id="login" type="button" onclick="">Login</button><br>
+                 <button id="login" type="submit" onclick="displayinfo(), internalCookie()" >Login</button><br>
 
-                 <button id="clear" type="submit">Clear Alll Data</button>
-
-                    <button id="logagain" type="button" onclick="displayinfo()">Login Again</button>
-                      
                  <h4 class="info"></h4>
+
+                 <button id="clear" type="submit" onclick="clearCookies()">Clear Cookies</button>
+              
                 
                   
 

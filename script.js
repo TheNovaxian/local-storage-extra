@@ -1,88 +1,125 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var form = document.getElementById('form');
+    var form = document.getElementById('form1');
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent form submission
-        var user = document.getElementById('User').value;
-        var age = document.getElementById('Age').value;
-        var key = document.getElementById('Key').value; 
-        addUser(user, age, key); // Utilize addUser to manage user addition
+        var user = document.getElementById('UserR').value;
+        var password = document.getElementById('passwordR').value; 
+      
+        addUser(user, password); 
+        form.reset();
+        alert('User Registered Successfully');
+    
     });
 });
 
-// function setCookie(name, value){
-//     document.cookie= `${name} = ${value}`;
-//     // alert(document.cookie);
+function addUser(user, password) { //adds
+    var users = JSON.parse(localStorage.getItem('users')) || [];
+    users.push({ user, password });
+    localStorage.setItem('users', JSON.stringify(users));
+   
+}
+
+window.onload = function(){
+    let hide = document.getElementById('form2');
+    let line = document.getElementById('vertical-line')
+    line.style.display = 'none'; //hides line
+    hide.style.display = 'none'; //hides other form
+}
+
+function reveal(){
+    let hide = document.getElementById('form2');
+    let line = document.getElementById('vertical-line')
+    line.style.display = 'block'; //shows line
+    hide.style.display = 'block'; //shows other form
+}
+
+function setCookie() {
+    const name = document.getElementById('name').value;
+    document.cookie = `username=${name}`;
+    document.cookie
+}
+
+function internalCookie(){
+    let username = document.getElementById('User2').value;
+    let password = document.getElementById('password2').value;
+    
+   
+    var users = JSON.parse(localStorage.getItem('users')) || []; // check to see if the information matches before setting logged in cookie
+    var matchedUser = users.find(user => user.user === username && user.password === password);
+
+    if (matchedUser) {
+        document.cookie = `LoggedIn=true; expires=Thu, 01 Jan 2026 00:00:00 UTC; path=/`;
+    }
+
+ 
+    //  document.cookie = `Username=${username.value}; expires=Thu, 01 Jan 2026 00:00:00 UTC; path=/`; 
+    // document.cookie = `password=${password.value}; expires=Thu, 01 Jan 2026 00:00:00 UTC; path=/`; 
+
+    // Set a cookie indicating user is logged in
+
+   
+}
+
+
+function clearCookies(){
+    document.cookie = `LoggedIn=true; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+}
+
+// function getCookie() {
+//     const name = document.getElementById('name').value;
+//     const value = getCookieValue('username');
+//     alert(`Value: ${value}`);
 // }
 
-// function getCookie(name){
+// function getCookieValue(name) {
 //     const cookies = document.cookie.split(';');
-//     for (let cookie of cookies){
+//     for (let cookie of cookies) {
 //         const [cookieName, cookieValue] = cookie.split('=');
-//         if (cookieName.trim() === name){
+//         if (cookieName.trim() === name) {
 //             return cookieValue;
 //         }
 //     }
 //     return null;
 // }
-function setCookie() {
-    const name = document.getElementById('name').value;
-    document.cookie = `username=${name}`;
-}
 
-function internalCookie(){
-    document.cookie = "Jason" 
-}
-
-function getCookie() {
-    const name = document.getElementById('name').value;
-    const value = getCookieValue('username');
-    alert(`Value: ${value}`);
-}
-
-function getCookieValue(name) {
-    const cookies = document.cookie.split(';');
-    for (let cookie of cookies) {
-        const [cookieName, cookieValue] = cookie.split('=');
-        if (cookieName.trim() === name) {
-            return cookieValue;
-        }
-    }
-    return null;
-}
-
-function addUser(user, age, key) {
-    var users = JSON.parse(localStorage.getItem('users')) || [];
-    users.push({ user, age, key });
-    localStorage.setItem('users', JSON.stringify(users));
-}
+// function addUser(user, password) {
+//     var users = JSON.parse(localStorage.getItem('users')) || [];
+//     users.push({ user, password });
+//     localStorage.setItem('users', JSON.stringify(users));
+// }
 
 function displayinfo() {
-    var ekey = document.getElementById('EKey').value;
+    var userl = document.getElementById('User2').value;
+    var passwordl = document.getElementById('password2').value;
     var users = JSON.parse(localStorage.getItem('users')) || [];
-    var matchedUser = users.find(user => user.key === ekey);
+    var matchedUser = users.find(user => user.user === userl && user.password === passwordl);
+    
+    if (userl.trim() === '' || passwordl.trim() === '') {
+        alert('Please enter information');
+        return;
+    }
 
-    var infoList = document.querySelector('.info');
     if (matchedUser) {
-        infoList.textContent = `Username: ${matchedUser.user}, Age: ${matchedUser.age}`;
+        alert(`Login Successful!`);
     } else {
-        infoList.textContent = 'Key does not match';
+        alert('Incorrect Login');
     }
 }
 
-function deleteUser() {
-    var dkey = document.getElementById('DKey').value.trim();
-    var users = JSON.parse(localStorage.getItem('users')) || [];
-    var filteredUsers = users.filter(user => user.key !== dkey);
+// function deleteUser() {
+//     var dkey = document.getElementById('DKey').value.trim();
+//     var users = JSON.parse(localStorage.getItem('users')) || [];
+//     var filteredUsers = users.filter(user => user.user !== dkey && user.password !== dkey);
 
-    if (users.length !== filteredUsers.length) {
-        localStorage.setItem('users', JSON.stringify(filteredUsers));
-        document.querySelector('.info').textContent = "User Deleted";
-    } else {
-        document.querySelector('.info').textContent = "Key does not match";
-    }
-}
+//     if (users.length !== filteredUsers.length) {
+//         localStorage.setItem('users', JSON.stringify(filteredUsers));
+//         document.querySelector('.info').textContent = "User Deleted";
+//     } else {
+//         document.querySelector('.info').textContent = "Username or Password does not match";
+//     }
+// }
 
 function deleteAllUsers() {
     localStorage.clear();
-    document.querySelector('.info').textContent = 'All users deleted';
+    alert('All Data Cleared');
 }
