@@ -10,27 +10,44 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('User Registered Successfully');
     
     });
+
+    // var form2 = document.getElementById('form2');
+    // form2.addEventListener('submit', function(event) {
+    //     event.preventDefault(); // Prevent form submission
+
+    //     displayinfo(); // Process the login information
+    // },{ once: true });
 });
 
 function addUser(user, password) { //adds
     var users = JSON.parse(localStorage.getItem('users')) || [];
     users.push({ user, password });
     localStorage.setItem('users', JSON.stringify(users));
+    document.body.style.overflow = 'auto';
    
 }
 
 window.onload = function(){
-    let hide = document.getElementById('form2');
-    let line = document.getElementById('vertical-line')
-    line.style.display = 'none'; //hides line
-    hide.style.display = 'none'; //hides other form
+    // let login = document.getElementById('login');
+    // login.style.display = 'none';
+    
 }
 
 function reveal(){
-    let hide = document.getElementById('form2');
-    let line = document.getElementById('vertical-line')
-    line.style.display = 'block'; //shows line
-    hide.style.display = 'block'; //shows other form
+    // let login = document.getElementById('login'); // hide section
+    // login.style.display = 'block';
+
+    var nextSection = document.getElementById('login'); // scroll to next section after clicking login
+    if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function reveal2(){
+    var nextSection = document.getElementById('register'); // scroll to next section after clicking register again
+    if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function setCookie() {
@@ -60,9 +77,15 @@ function internalCookie(){
    
 }
 
+function clearCookies() {
+    document.cookie = 'LoggedIn=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    alert('Cookies Cleared');
+    document.body.style.overflow = 'auto';
+    window.location.href = window.location.href;
 
-function clearCookies(){
-    document.cookie = `LoggedIn=true; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+    // window.addEventListener('resize', function() {
+    //     window.location.reload();
+    // });
 }
 
 // function getCookie() {
@@ -89,21 +112,26 @@ function clearCookies(){
 // }
 
 function displayinfo() {
-    var userl = document.getElementById('User2').value;
-    var passwordl = document.getElementById('password2').value;
-    var users = JSON.parse(localStorage.getItem('users')) || [];
-    var matchedUser = users.find(user => user.user === userl && user.password === passwordl);
-    
-    if (userl.trim() === '' || passwordl.trim() === '') {
+    console.log('displayinfo function called');
+    var userl = document.getElementById('User2').value.trim();
+    var passwordl = document.getElementById('password2').value.trim();
+
+    if (userl === '' || passwordl === '') {
         alert('Please enter information');
         return;
     }
 
+    var users = JSON.parse(localStorage.getItem('users')) || [];
+    var matchedUser = users.find(user => user.user === userl && user.password === passwordl);
+
     if (matchedUser) {
-        alert(`Login Successful!`);
+        alert('Login Successful!');
     } else {
         alert('Incorrect Login');
     }
+
+    document.getElementById('form2').reset();
+    document.body.style.overflow = 'auto';
 }
 
 // function deleteUser() {
@@ -123,3 +151,6 @@ function deleteAllUsers() {
     localStorage.clear();
     alert('All Data Cleared');
 }
+
+
+

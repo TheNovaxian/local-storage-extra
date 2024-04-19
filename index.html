@@ -9,7 +9,7 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-
+<section id="register">
     <div class="container">
 
           <form id="form1" >
@@ -26,15 +26,19 @@
 
                  </div>
                     <button id="register" type="submit" onclick="reveal()">Register</button>
+                    <button id="register" type="button" onclick="reveal()">Login</button>
                       
                  <h4 class="info"></h4>
                  
                  <button id="clear" type="button" onclick="deleteAllUsers()">Clear All Data</button><br>
         </form>
+    </div>
+</section>
+      
+<section id="login">
+        <div class="container1">
 
-        <div id="vertical-line"></div>
-
-        <form id="form2" >
+        <form id="form2"  >
             <h1>Login</h1>
 
               <div class="input">
@@ -49,11 +53,15 @@
                      <input type="password" id="password2" placeholder="*******"><br>
                       
                  </div>
-                 <button id="login" type="submit" onclick="displayinfo(), internalCookie()" >Login</button><br>
-
+                 
+                 <div class="bcontainer">
+                 <button id="login" type="button" onclick=" internalCookie(), displayinfo()" >Login</button><br>
+                 <button id="registeragain" type="button" onclick="reveal2()">Register Again</button>
+                </div>
                  <h4 class="info"></h4>
 
-                 <button id="clear" type="submit" onclick="clearCookies()">Clear Cookies</button>
+                 <button id="clear" type="button" onclick="clearCookies()">Clear Cookies</button>
+                
               
                 
                   
@@ -61,6 +69,7 @@
         </form>
        
     </div>
+</section>
 
     
 </body>
